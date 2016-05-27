@@ -58,6 +58,7 @@
         <jasypt.version>1.9.1</jasypt.version>
         <jmeter.version>2.8</jmeter.version>
         <junit.version>4.12</junit.version>
+        <junitparams.version>1.0.5</junitparams.version>
         <lombok.version>1.16.6</lombok.version>
         <poi.version>3.9</poi.version>
         <slf4j.version>1.7.5</slf4j.version>
@@ -120,6 +121,12 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>pl.pragmatists</groupId>
+                <artifactId>JUnitParams</artifactId>
+                <version>${junitparams.version}</version>
+                <scope>test</scope>
             </dependency>
 
         </dependencies>
