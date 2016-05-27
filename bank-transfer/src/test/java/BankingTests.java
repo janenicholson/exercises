@@ -5,7 +5,7 @@ import org.junit.Test;
 public class BankingTests extends Account {
 
     @Test
-    public void transfer_amount_from_payer_to_payee_results_in_updated_balances() {
+    public void update_balances_for_payer_and_payee_when_transfer_amount_from_payer_to_payee() {
         Account payer = new Account();
         Account payee = new Account();
         payer.credit(100);
