@@ -9,10 +9,10 @@ public class Library {
     private final Collection<Title> collection = Lists.newArrayList();
     private final Collection<Title> newTitles = Lists.newArrayList();
 
-    public void receiveDonation(Title title, Member member) {
+    public void receiveDonation(Title title, Member member, EmailAlert emailAlert) {
         collection.add(title);
         newTitles.add(title);
-        title.registerForCheckout();
+        title.registerForCheckout(emailAlert);
         member.awardPoints(10);
     }
 
