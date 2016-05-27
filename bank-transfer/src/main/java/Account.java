@@ -1,18 +1,12 @@
+import lombok.Getter;
 
 public class Account {
 
+    @Getter
     private int balance;
-
-    public Account() {
-        super();
-    }
 
     public void credit(int amount) {
         balance += amount;
-    }
-
-    public int getBalance() {
-        return balance;
     }
 
     public void transferTo(Account payee, int amount) {
