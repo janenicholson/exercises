@@ -1,5 +1,7 @@
 package week1;
 
+import java.util.List;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -16,7 +18,7 @@ public class CypherStateResource {
 	private final CypherTextCollection cypherTexts;
 	@GET
 	@Timed
-	public CypherTextCollection report() {
-		return cypherTexts;
+	public List<MessageOnTopOfMessage> report() {
+		return cypherTexts.report();
 	}
 }

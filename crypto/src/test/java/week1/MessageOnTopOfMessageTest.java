@@ -1,7 +1,7 @@
 package week1;
 
 import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.instanceOf;
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
@@ -14,4 +14,10 @@ public class MessageOnTopOfMessageTest {
 		assertThat(summary.toString(), containsString("xor"));
 	}
 
+	@Test
+	public void replace_non_printable_chars() {
+		byte[] bytes = new byte[] {'A', 'Z', 0x00};
+		MessageOnTopOfMessage message = new MessageOnTopOfMessage("", bytes);
+		assertThat(message.getMessage(), is("AZ?"));
+	}
 }

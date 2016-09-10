@@ -1,5 +1,9 @@
 package week1;
 
+import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.io.BaseEncoding;
 
@@ -22,5 +26,17 @@ public class CypherText {
 			result[index] = (byte) (content[index] ^ other.content[index]);
 		}
 		return new MessageOnTopOfMessage(label + " xor " + other.label, result);
+	}
+
+	public Stream<MessageOnTopOfMessage> xorWithAll(List<CypherText> cypherTexts) {
+		Predicate<CypherText> excludeSelf = new Predicate<CypherText>() {
+			@Override
+			public boolean test(CypherText t) {
+				return !label.equals(t.label);
+			}
+		};
+		return cypherTexts.stream()
+				.filter(excludeSelf)
+				.map(c->c.xor(this));
 	}
 }

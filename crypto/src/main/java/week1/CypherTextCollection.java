@@ -1,6 +1,7 @@
 package week1;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.google.common.collect.Lists;
 
@@ -16,5 +17,11 @@ public class CypherTextCollection {
 	public void addAll(List<CypherText> strings) {
 		for (CypherText string : strings)
 			cypherTexts.add(string);
+	}
+
+	public List<MessageOnTopOfMessage> report() {
+		return cypherTexts.stream()
+			.flatMap(c->c.xorWithAll(cypherTexts))
+			.collect(Collectors.toList());
 	}
 }
