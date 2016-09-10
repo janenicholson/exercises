@@ -4,16 +4,17 @@ import java.util.List;
 
 import com.google.common.collect.Lists;
 
-public class CypherTextCollection {
-	private List<CypherText> cypherTexts;
-	private final CypherText target;
-	public CypherTextCollection(String target) {
-		cypherTexts = Lists.newArrayList();
-		this.target = new CypherText(target);
-	}
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
-	public void addAll(List<String> strings) {
-		for (String string : strings)
-			cypherTexts.add(new CypherText(string));
+@Getter
+@RequiredArgsConstructor
+public class CypherTextCollection {
+	private List<CypherText> cypherTexts  = Lists.newArrayList();
+	private final CypherText target;
+
+	public void addAll(List<CypherText> strings) {
+		for (CypherText string : strings)
+			cypherTexts.add(string);
 	}
 }

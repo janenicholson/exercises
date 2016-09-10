@@ -9,10 +9,10 @@ import io.dropwizard.db.DataSourceFactory;
 
 public class ReusedSingleTimePadAttackConfiguration extends Configuration {
 	@JsonProperty
-	List<String> cypherTexts;
+	List<CypherText> cypherTexts;
 
 	@JsonProperty
-	String targetToDecrypt;
+	CypherText targetToDecrypt;
 
 	@JsonProperty
 	DataSourceFactory database;
