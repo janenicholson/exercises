@@ -6,12 +6,12 @@ import lombok.RequiredArgsConstructor;
 @Data
 @RequiredArgsConstructor
 public class MessageOnTopOfMessage {
-	private final String label;
 	private final String message;
+	private final String label;
 
 	public MessageOnTopOfMessage(String label, byte[] content) {
 		this.label = label;
-		this.message = new String(tochar(content));
+		this.message = new String(tochar(content)) + " ";
 	}
 
 	private char[] tochar(byte[] content) {
@@ -26,6 +26,6 @@ public class MessageOnTopOfMessage {
 		if ((x >= 'A'  && x <= 'Z')
 			|| (x >= 'a' && x <= 'z'))
 			return (char) x;
-		return '?';
+		return 'x';
 	}
 }

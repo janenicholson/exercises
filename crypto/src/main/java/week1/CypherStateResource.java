@@ -1,10 +1,12 @@
 package week1;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import com.codahale.metrics.annotation.Timed;
@@ -18,7 +20,7 @@ public class CypherStateResource {
 	private final CypherTextCollection cypherTexts;
 	@GET
 	@Timed
-	public List<MessageOnTopOfMessage> report() {
-		return cypherTexts.report();
+	public List<String> state(@QueryParam("messagenumber") Optional<Integer> index) {
+		return cypherTexts.solve(index);
 	}
 }

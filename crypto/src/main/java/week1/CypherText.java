@@ -13,6 +13,8 @@ import lombok.Data;
 public class CypherText {
 	private final String label;
 	private final byte[] content;
+	private char[] plainText;
+	private byte[] key;
 
 	public CypherText(@JsonProperty("label") String label, @JsonProperty("content") String encodedBytes) {
 		this.label = label;
@@ -38,5 +40,14 @@ public class CypherText {
 		return cypherTexts.stream()
 				.filter(excludeSelf)
 				.map(c->c.xor(this));
+	}
+
+	public void plainTextAt(int charIndex, char c) {
+		if (plainText == null) {
+			plainText = new char[content.length];
+			key = new byte[content.length];
+		}
+		plainText[charIndex] = c;
+		key[charIndex] = (byte)(content[charIndex] ^ c);
 	}
 }
