@@ -20,7 +20,7 @@ public class CypherStateResource {
 	private final CypherTextCollection cypherTexts;
 	@GET
 	@Timed
-	public List<String> state(@QueryParam("messagenumber") Optional<Integer> index) {
+	public List<String> state(@QueryParam("message") Optional<Integer> index) {
 		return cypherTexts.solve(index);
 	}
 }
