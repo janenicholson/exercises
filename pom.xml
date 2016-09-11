@@ -15,6 +15,7 @@
         <module>fizzbuzz</module>
         <module>jg-holidays</module>
         <module>community-video</module>
+        <module>crypto</module>
     </modules>
 
     <properties>
