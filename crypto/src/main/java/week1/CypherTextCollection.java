@@ -21,6 +21,11 @@ public class CypherTextCollection {
 			cypherTexts.add(string);
 	}
 
+	public void addAll(CypherText ... strings) {
+		for (CypherText string : strings)
+			cypherTexts.add(string);
+	}
+
 	public List<String> solve(Optional<Integer> index) {
 		List<MessageOnTopOfMessage> messages = report(considerCipher(index));
 		List<String> strings = messages.stream().map(m->m.getMessage()).collect(Collectors.toList());
@@ -41,7 +46,7 @@ public class CypherTextCollection {
 				}
 			}
 			if (validCount > 7) {
-				considerCipher(messageIndex).plainTextAt(charIndex, ' ');
+				considerCipher(messageIndex).setPlainTextAt(charIndex, ' ');
 			}
 		}
 	}
@@ -67,5 +72,11 @@ public class CypherTextCollection {
 			.filter(excludeSelf )
 			.map(c->c.xor(cypherText))
 			.collect(Collectors.toList());
+	}
+
+	public void setKeyAt(int i, byte b) {
+		for (CypherText cypherText : cypherTexts) {
+			cypherText.setKeyAt(i, b);
+		}
 	}
 }
