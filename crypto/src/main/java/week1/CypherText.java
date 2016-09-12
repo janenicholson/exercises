@@ -41,6 +41,10 @@ public class CypherText {
 				.map(c->c.xor(this));
 	}
 
+	public byte guess(int charIndex, char c) {
+		return (byte) (content[charIndex] ^ c);
+	}
+
 	public void setPlainTextAt(int charIndex, char c) {
 		allocateSecrets();
 		plainText[charIndex] = c;
@@ -53,6 +57,7 @@ public class CypherText {
 	}
 
 	public void setKeyAt(int i, byte b) {
-		setPlainTextAt(i, (char)(content[i] ^ b));
+		if (content.length > i)
+			setPlainTextAt(i, (char)(content[i] ^ b));
 	}
 }

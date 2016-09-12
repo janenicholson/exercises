@@ -1,5 +1,7 @@
 package week1;
 
+import java.util.Optional;
+
 import com.codahale.metrics.health.HealthCheck;
 
 import io.dropwizard.Application;
@@ -12,8 +14,8 @@ public class ReusedSingleTimePadAttackApplication extends Application<ReusedSing
 
 	@Override
 	public void run(ReusedSingleTimePadAttackConfiguration configuration, Environment environment) throws Exception {
-		CypherTextCollection cypherTextCollection = new CypherTextCollection(configuration.targetToDecrypt);
-		cypherTextCollection.addAll(configuration.cypherTexts);
+		CypherTextCollection cypherTextCollection = new CypherTextCollection(configuration.getTargetToDecrypt());
+		cypherTextCollection.addAll(configuration.getCypherTexts());
 		environment.jersey().register(new CypherStateResource(cypherTextCollection));
 		environment.healthChecks().register("dummy", new HealthCheck() {
 			@Override
@@ -21,5 +23,7 @@ public class ReusedSingleTimePadAttackApplication extends Application<ReusedSing
 				return Result.healthy();
 			}
 		});
+		cypherTextCollection.solve(Optional.empty());
+		cypherTextCollection.loadKnowns(configuration.getKnowns());
 	}
 }

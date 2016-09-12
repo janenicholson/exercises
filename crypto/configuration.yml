@@ -92,3 +92,312 @@ logging:
       archivedFileCount: 7
       timeZone: UTC
       maxFileSize: 10MB
+
+knowns:
+  - message: 9
+    at: 0
+    is: " "
+  - message: 0
+    at: 1
+    is: "e"
+  - message: 0
+    at: 2
+    is: " "
+  - message: 7
+    at: 2
+    is: " "
+  - message: 2
+    at: 3
+    is: " "
+  - message: 9
+    at: 4
+    is: " "
+  - message: 1
+    at: 5
+    is: " "
+  - message: 0
+    at: 6
+    is: " "
+  - message: 7
+    at: 6
+    is: " "
+  - message: 1
+    at: 7
+    is: "o"
+  - message: 2
+    at: 8
+    is: " "
+  - message: 5
+    at: 9
+    is: " "
+  - message: 7
+    at: 10
+    is: " "
+  - message: 1
+    at: 11
+    is: " "
+  - message: 9
+    at: 12
+    is: " "
+  - message: 0
+    at: 13
+    is: " "
+  - message: 0
+    at: 14
+    is: "t"
+  - message: 8
+    at: 15
+    is: " "
+  - message: 8
+    at: 16
+    is: " "
+  - message: 0
+    at: 17
+    is: " "
+  - message: 4
+    at: 17
+    is: " "
+  - message: 1
+    at: 18
+    is: "l"
+  - message: 5
+    at: 19
+    is: " "
+  - message: 0
+    at: 20
+    is: "m"
+  - message: 4
+    at: 21
+    is: " "
+  - message: 5
+    at: 22
+    is: " "
+  - message: 3
+    at: 23
+    is: " "
+  - message: 0
+    at: 24
+    is: " "
+  - message: 1
+    at: 25
+    is: "y"
+  - message: 1
+    at: 26
+    is: " "
+  - message: 0
+    at: 27
+    is: " "
+  - message: 8
+    at: 27
+    is: " "
+  - message: 3
+    at: 28
+    is: " "
+  - message: 9
+    at: 29
+    is: " "
+  - message: 7
+    at: 30
+    is: " "
+  - message: 1
+    at: 31
+    is: " "
+  - message: 0
+    at: 32
+    is: " "
+  - message: 3
+    at: 33
+    is: " "
+  - message: 4
+    at: 34
+    is: " "
+  - message: 4
+    at: 35
+    is: "k"
+  - message: 4
+    at: 36
+    is: "e"
+  - message: 5
+    at: 37
+    is: " "
+  - message: 7
+    at: 38
+    is: " "
+  - message: 4
+    at: 39
+    is: " "
+  - message: 0
+    at: 40
+    is: " "
+  - message: 8
+    at: 41
+    is: " "
+  - message: 5
+    at: 42
+    is: " "
+  - message: 8
+    at: 43
+    is: " "
+  - message: 3
+    at: 44
+    is: " "
+  - message: 9
+    at: 45
+    is: " "
+  - message: 4
+    at: 46
+    is: " "
+  - message: 7
+    at: 46
+    is: " "
+  - message: 0
+    at: 47
+    is: "e"
+  - message: 5
+    at: 48
+    is: " "
+  - message: 7
+    at: 49
+    is: " "
+  - message: 4
+    at: 50
+    is: " "
+  - message: 0
+    at: 51
+    is: " "
+  - message: 9
+    at: 52
+    is: " "
+  - message: 5
+    at: 53
+    is: " "
+  - message: 0
+    at: 54
+    is: " "
+  - message: 0
+    at: 55
+    is: "c"
+  - message: 4
+    at: 56
+    is: "p"
+  - message: 0
+    at: 57
+    is: "n"
+  - message: 0
+    at: 58
+    is: " "
+  - message: 5
+    at: 58
+    is: " "
+  - message: 9
+    at: 59
+    is: " "
+  - message: 3
+    at: 60
+    is: " "
+  - message: 7
+    at: 61
+    is: " "
+  - message: 8
+    at: 62
+    is: " "
+  - message: 0
+    at: 63
+    is: " "
+  - message: 7
+    at: 64
+    is: " "
+  - message: 2
+    at: 65
+    is: " "
+  - message: 0
+    at: 66
+    is: "c"
+  - message: 9
+    at: 67
+    is: " "
+  - message: 3
+    at: 68
+    is: " "
+  - message: 7
+    at: 69
+    is: " "
+  - message: 0
+    at: 70
+    is: " "
+  - message: 5
+    at: 71
+    is: " "
+  - message: 2
+    at: 72
+    is: " "
+  - message: 7
+    at: 73
+    is: " "
+  - message: 8
+    at: 74
+    is: " "
+  - message: 0
+    at: 74
+    is: " "
+  - message: 9
+    at: 75
+    is: " "
+  - message: 5
+    at: 76
+    is: " "
+  - message: 9
+    at: 77
+    is: " "
+  - message: 8
+    at: 78
+    is: " "
+  - message: 6
+    at: 79
+    is: " "
+  - message: 1
+    at: 80
+    is: " "
+  - message: 0
+    at: 81
+    is: " "
+  - message: 5
+    at: 81
+    is: " "
+  - message: 4
+    at: 82
+    is: "s"
+  - message: 5
+    at: 83
+    is: "i"
+  - message: 5
+    at: 84
+    is: "t"
+  - message: 6
+    at: 85
+    is: " "
+  - message: 5
+    at: 86
+    is: "l"
+  - message: 7
+    at: 87
+    is: " "
+  - message: 5
+    at: 88
+    is: " "
+  - message: 5
+    at: 89
+    is: "s"
+  - message: 4
+    at: 90
+    is: " "
+  - message: 5
+    at: 92
+    is: "t"
+  - message: 7
+    at: 93
+    is: " "
+  - message: 5
+    at: 94
+    is: "r"
+    

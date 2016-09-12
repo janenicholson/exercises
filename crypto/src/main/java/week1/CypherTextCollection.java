@@ -46,9 +46,13 @@ public class CypherTextCollection {
 				}
 			}
 			if (validCount > 7) {
-				considerCipher(messageIndex).setPlainTextAt(charIndex, ' ');
+				guess(messageIndex, charIndex, ' ');
 			}
 		}
+	}
+
+	public void guess(Optional<Integer> messageIndex, int charIndex, char c) {
+		setKeyAt(charIndex, considerCipher(messageIndex).guess(charIndex, c));
 	}
 
 	private char getCharacter(int charIndex, String string) {
@@ -68,7 +72,9 @@ public class CypherTextCollection {
 				return !cypherText.getLabel().equals(t.getLabel());
 			}
 		};
-		return cypherTexts.stream()
+		List<CypherText> cyphers = cypherTexts;
+		cyphers.add(target);
+		return cyphers.stream()
 			.filter(excludeSelf )
 			.map(c->c.xor(cypherText))
 			.collect(Collectors.toList());
@@ -77,6 +83,13 @@ public class CypherTextCollection {
 	public void setKeyAt(int i, byte b) {
 		for (CypherText cypherText : cypherTexts) {
 			cypherText.setKeyAt(i, b);
+		}
+		target.setKeyAt(i, b);
+	}
+
+	public void loadKnowns(List<Known> knowns) {
+		for (Known known : knowns) {
+			guess(Optional.of(known.getMessageIndex()), known.getCharacterIndex(), known.getCharacter());
 		}
 	}
 }

@@ -6,14 +6,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.dropwizard.Configuration;
 import io.dropwizard.db.DataSourceFactory;
+import lombok.Getter;
 
+@Getter
 public class ReusedSingleTimePadAttackConfiguration extends Configuration {
 	@JsonProperty
-	List<CypherText> cypherTexts;
+	private List<CypherText> cypherTexts;
 
 	@JsonProperty
-	CypherText targetToDecrypt;
+	private CypherText targetToDecrypt;
 
 	@JsonProperty
-	DataSourceFactory database;
+	private DataSourceFactory database;
+
+	@JsonProperty
+	private List<Known> knowns;
 }
