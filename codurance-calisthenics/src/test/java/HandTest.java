@@ -9,4 +9,6 @@ public class HandTest {
         Hand hand = new Hand();
         assertThat(hand.value(), is(Points.zero));
     }
+    
 }
+
