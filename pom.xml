@@ -16,6 +16,7 @@
         <module>jg-holidays</module>
         <module>community-video</module>
         <module>crypto</module>
+        <module>codurance-calisthenics</module>
     </modules>
 
     <properties>
