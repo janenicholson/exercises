@@ -5,14 +5,21 @@ import org.junit.Test;
 
 public class CardScorerTest {
     private CardScorer cardScorer = new CardScorer();
+    void compareCardToPoints(char c, int points) {
+        Card ace = new Card(c);
+        assertThat(cardScorer.score(ace), is(new Points(points)));        
+    }
     @Test
     public void ace_card_returns_four_points() {
-        Card ace = new Card('A');
-        assertThat(cardScorer.score(ace), is(new Points(4)));
+        compareCardToPoints('A', 4);
     }
     @Test
     public void king_card_is_worth_three_points() {
-        Card king = new Card('K');
-        assertThat(cardScorer.score(king), is(new Points(3)));
+        compareCardToPoints('K', 3);
     }
+    @Test
+    public void queen_card_is_worth_two_points() {
+        compareCardToPoints('Q',  2);
+    }
+    
 }
