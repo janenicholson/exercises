@@ -18,6 +18,6 @@ public class MessageOnTopOfMessageTest {
 	public void replace_non_printable_chars() {
 		byte[] bytes = new byte[] {'A', 'Z', 0x00};
 		MessageOnTopOfMessage message = new MessageOnTopOfMessage("", bytes);
-		assertThat(message.getMessage(), is("AZ?"));
+		assertThat(message.getMessage(), is("AZx "));
 	}
 }
