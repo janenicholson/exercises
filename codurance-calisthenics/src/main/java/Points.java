@@ -14,5 +14,8 @@ public class Points {
         return obj instanceof Points &&
                 this.points == ((Points)obj).points;
     }
+    public Points plus(Points addend) {
+        return new Points(this.points + addend.points);
+    }
     
 }
