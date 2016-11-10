@@ -1,7 +1,6 @@
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class HandTest {
@@ -11,7 +10,7 @@ public class HandTest {
         assertThat(hand.value(), is(Points.zero));
     }
 
-    @Test @Ignore
+    @Test
     public void hand_with_ace_king_queen_has_value_of_nine() {
         Hand hand = new Hand("AKQ");
         assertThat(hand.value(), is(new Points(9)));
