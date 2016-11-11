@@ -15,5 +15,12 @@ public class HandTest {
         Hand hand = new Hand("AKQ");
         assertThat(hand.value(), is(new Points(9)));
     }
+    @Test
+    public void hand_with_maximum_value_hand_has_value_of_thirtyseven() {
+        Hand hand = new Hand("AKQAQKAQKAQKJ");
+        assertThat(hand.value(), is(new Points(37)));
+    }
+    
+    
 }
 
